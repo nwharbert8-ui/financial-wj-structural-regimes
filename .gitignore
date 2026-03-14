@@ -1,0 +1,10 @@
+data/
+results/
+results_rebuild/
+cache/
+figures/
+*.parquet
+*.npy
+__pycache__/
+*.pyc
+.DS_Store
