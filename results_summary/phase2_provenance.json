@@ -1,0 +1,23 @@
+{
+  "phase": "Phase 2 extension on top of Phase 1 augmentation",
+  "methodology": "WJ-native Layer 2H pairing-family decomposition",
+  "fundamental_unit": "individual S&P 500 stock (n=478)",
+  "random_seed": 42,
+  "n_permutations": 5000,
+  "n_windows": 264,
+  "n_valid_correlation_windows": 204,
+  "binary_threshold_pct": 5,
+  "binary_threshold_value": 0.5016688778014874,
+  "outputs": [
+    "per_window_pairing.csv (n=264)",
+    "per_window_macro_stress.csv (n=264)",
+    "trajectory_correlations.csv (12 gap-vs-macro tests)",
+    "signed_wj_regimes_permutation.csv (5 regimes tested)",
+    "combined_regime_catalog.csv (7 unique regimes)",
+    "figures/per_window_trajectories.png",
+    "figures/triangular_regime_space.png",
+    "figures/macro_correlation_grid.png"
+  ],
+  "elapsed_seconds": 561.2,
+  "execution_date": "2026-05-08"
+}

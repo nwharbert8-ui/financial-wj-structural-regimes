@@ -1,0 +1,7 @@
+unsigned_episode,unsigned_dates,direction,n_signed_regime_overlaps,signed_regime_overlap_dates
+1,2008-05-07 to 2009-05-07,CONVERGENCE,1,2008-07-08–2009-05-07 (overlap 303d); 
+2,2016-12-07 to 2017-09-08,DIVERGENCE,1,2017-01-09–2017-09-08 (overlap 242d); 
+3,2020-01-10 to 2020-01-10,CONVERGENCE,1,2020-01-10–2020-01-10 (overlap 0d); 
+4,2020-05-12 to 2020-08-11,CONVERGENCE,1,2020-05-12–2020-08-11 (overlap 91d); 
+5,2024-01-12 to 2024-01-12,DIVERGENCE,0,(none)
+6,2024-05-14 to 2024-08-14,DIVERGENCE,0,(none)

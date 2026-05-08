@@ -1,0 +1,86 @@
+{
+  "methodology": "WJ-native (augmented with Layer 2H pairing-family)",
+  "fundamental_unit": "individual S&P 500 stock (478 stocks)",
+  "pairwise_matrix": "full, no pre-filtering",
+  "correlation_method": "Spearman (primary), Pearson (sensitivity)",
+  "fdr_scope": "permutation null on 6 detected regimes",
+  "domain_conventional_methods": "GICS sector classification (post-discovery comparison only)",
+  "random_seed": 42,
+  "n_bootstrap": 1000,
+  "n_permutations": 5000,
+  "pipeline_file": "financial_wj_augmentation.py",
+  "execution_date": "2026-05-08",
+  "wj_compliance_status": "PASS (Layer 1, Layer 2A/2B/2H, Layer 3, Layer 4)",
+  "implementation_divergence": {
+    "per_regime": [
+      {
+        "episode": 1,
+        "direction": "CONVERGENCE",
+        "wj_unsigned": 0.7402101517527703,
+        "wj_signed": 0.9180834777173468,
+        "gap": 0.1778733259645765,
+        "sign_inversion_pct": 68.4681588463391,
+        "magnitude_change_pct": 31.531841153660906
+      },
+      {
+        "episode": 2,
+        "direction": "DIVERGENCE",
+        "wj_unsigned": 0.6811796060121819,
+        "wj_signed": 0.9157099590445951,
+        "gap": 0.2345303530324132,
+        "sign_inversion_pct": 73.56190427434652,
+        "magnitude_change_pct": 26.438095725653483
+      },
+      {
+        "episode": 3,
+        "direction": "CONVERGENCE",
+        "wj_unsigned": 0.7391037741480907,
+        "wj_signed": 0.9190184874380954,
+        "gap": 0.17991471329000475,
+        "sign_inversion_pct": 68.9602590848242,
+        "magnitude_change_pct": 31.0397409151758
+      },
+      {
+        "episode": 4,
+        "direction": "CONVERGENCE",
+        "wj_unsigned": 0.75426722444797,
+        "wj_signed": 0.9264268223314321,
+        "gap": 0.17215959788346213,
+        "sign_inversion_pct": 70.05968068228249,
+        "magnitude_change_pct": 29.94031931771751
+      },
+      {
+        "episode": 5,
+        "direction": "DIVERGENCE",
+        "wj_unsigned": 0.6985749407563578,
+        "wj_signed": 0.9191445030577605,
+        "gap": 0.22056956230140268,
+        "sign_inversion_pct": 73.17558893572816,
+        "magnitude_change_pct": 26.824411064271843
+      },
+      {
+        "episode": 6,
+        "direction": "DIVERGENCE",
+        "wj_unsigned": 0.6903208925411833,
+        "wj_signed": 0.917449293041016,
+        "gap": 0.22712840049983263,
+        "sign_inversion_pct": 73.34314618884575,
+        "magnitude_change_pct": 26.65685381115425
+      }
+    ],
+    "mean_sign_inversion_pct": 71.26145633539437,
+    "max_sign_inversion_pct": 73.56190427434652
+  },
+  "layer_2H_pairings_applied": [
+    "Type 1 (Continuous-Discrete): WJ - binary Jaccard at top 5% threshold",
+    "Type 2 (Sign-Treatment): signed WJ - unsigned WJ; validated against VIX and realized volatility",
+    "Type 5 (Local-Global): per-stock fingerprint reorganization (implemented in primary pipeline)"
+  ],
+  "tests_addressed": {
+    "test_10_pearson_spearman": "Pearson WJ computed alongside Spearman; delta reported per regime.",
+    "test_11_bootstrap_ci": "1000-iteration bootstrap 95% CI on unsigned WJ per regime.",
+    "test_12_domain_confound": "QE-era explicitly addressed and named as deepest regime.",
+    "test_14_metric_robustness": "Frobenius norm computed as alternative matrix similarity metric."
+  },
+  "elapsed_seconds": 201.98
+}
